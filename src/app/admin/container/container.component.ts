@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { StudentService } from '../../services/student.service';
-import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-container',
@@ -16,11 +15,10 @@ export class ContainerComponent implements OnInit {
     this.getStudnetList();
   }
 
-
+  url = "http://localhost:4000/v1";
   onSubmit(data: any) {
-    this.http.post('http://localhost:4000/v1/students', data).subscribe((result) => {
+    this.http.post(this.url + `/students`, data).subscribe((result) => {
       console.log(result);
-
     })
   }
 
@@ -31,5 +29,4 @@ export class ContainerComponent implements OnInit {
       console.log('Inner Data', data);
     })
   }
-
 }

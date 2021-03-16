@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { StudentService } from 'src/app/services/student.service';
 
 @Component({
   selector: 'app-organization-list',
@@ -7,9 +9,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrganizationListComponent implements OnInit {
 
-  constructor() { }
+  constructor( private studentService : StudentService) { }
 
   ngOnInit(): void {
+    this.getOrg()
+  }
+
+  getOrgList : any = [];
+  getOrg() {
+    this.studentService.getOrganization().subscribe(data => {
+      this.getOrgList = data;
+      console.log('Organization list', data);
+    })
+  }
+
+  deleteOrg(id : any) {
+    this.studentService.deleteOrganization(id).subscribe(data => {
+      this.getOrg();
+    })
+    console.log(id);
+
   }
 
 }

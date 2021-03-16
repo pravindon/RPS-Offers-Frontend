@@ -32,12 +32,26 @@
             <th>Email</th>
             <th>Phone</th>
             <th>Address</th>
+            <th>Action</th>
           </tr>
           <tr *ngFor="let stud of getList">
             <td>{{stud.name}}</td>
             <td>{{stud.email}}</td>
             <td>{{stud.phone}}</td>
             <td>{{stud.address}}</td>
+            <td>
+              <div class="row">
+                <div class="col-md-4">
+                  <a><i class="fa fa-eye"></i></a>
+                </div>
+                <div class="col-md-4">
+                  <a><i class="fa fa-edit"></i></a>
+                </div>
+                <div class="col-md-4">
+                  <a><i class="fa fa-trash"></i></a>
+                </div>
+              </div>
+            </td>
           </tr>
         </table>
       </div>
