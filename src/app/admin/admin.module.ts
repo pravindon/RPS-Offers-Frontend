@@ -9,6 +9,7 @@ import { OrganizationListComponent } from './organization-list/organization-list
 import { OrganizationComponent } from './organization/organization.component';
 import { StudentService } from '../services/student.service';
 import { ContainerComponent } from './container/container.component';
+import { EditOrganizationComponent } from './edit-organization/edit-organization.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ContainerComponent } from './container/container.component';
     AddAdminComponent,
     OrganizationComponent,
     OrganizationListComponent,
-    ContainerComponent
+    ContainerComponent,
+    EditOrganizationComponent,
   ],
   imports: [
     CommonModule,

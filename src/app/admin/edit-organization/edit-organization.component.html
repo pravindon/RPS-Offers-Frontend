@@ -3,13 +3,7 @@
     <div class="row">
       <div class="col-md-12 mt-3">
         <h1>Add Organization</h1>
-        <div *ngIf="alertSuccess" class="alert alert-success alert-dismissible fade show" role="alert">
-          <strong>Success!</strong> Your data successfuly added.
-          <button type="button" (click)="closeAlert()" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <form [formGroup]="organizationForm" (ngSubmit)="organizationData()" class="mt-4">
+        <form [formGroup]="editOrganizationForm" (ngSubmit)="editOrganizationData()" class="mt-4">
           <div class="row">
             <div class="col-md-6">
               <input type="text" name="cardNo" formControlName="cardNo" placeholder="Card No." class="form-control mb-3" />
@@ -38,7 +32,7 @@
           </div>
           <div class="row">
             <div class="col-md-12 text-center mt-2">
-              <button type="submit" class="btn btn-primary mb-4" >Submit</button>
+              <button type="submit" class="btn btn-primary mb-4" >Update</button>
             </div>
           </div>
         </form>

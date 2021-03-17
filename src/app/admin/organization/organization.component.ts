@@ -9,6 +9,7 @@ import {FormControl, FormGroup} from '@angular/forms'
 })
 export class OrganizationComponent implements OnInit {
 
+  alertSuccess = false;
   constructor(private http:HttpClient) { }
 
   ngOnInit(): void {
@@ -44,9 +45,13 @@ export class OrganizationComponent implements OnInit {
     this.http.post(this.url + `/organization`, this.organizationForm.value).subscribe((result) => {
       console.log(result);
       this.organizationForm.reset();
+      this.alertSuccess = true;
     })
     console.warn(this.organizationForm.value);
+  }
 
+  closeAlert(){
+    this.alertSuccess = false;
   }
 
 }
