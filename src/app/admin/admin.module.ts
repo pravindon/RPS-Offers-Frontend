@@ -7,9 +7,10 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { AddAdminComponent } from './add-admin/add-admin.component';
 import { OrganizationListComponent } from './organization-list/organization-list.component';
 import { OrganizationComponent } from './organization/organization.component';
-import { StudentService } from '../services/student.service';
+import { StudentService } from '../shared/core/services/student.service';
 import { ContainerComponent } from './container/container.component';
 import { EditOrganizationComponent } from './edit-organization/edit-organization.component';
+import { AdminComponent } from './admin.component';
 
 @NgModule({
   declarations: [
@@ -19,13 +20,14 @@ import { EditOrganizationComponent } from './edit-organization/edit-organization
     OrganizationListComponent,
     ContainerComponent,
     EditOrganizationComponent,
+    AdminComponent,
   ],
   imports: [
     CommonModule,
     AdminRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [
     StudentService

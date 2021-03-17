@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { StudentService } from '../../services/student.service';
+import { StudentService } from '../../shared/core/services/student.service';
 
 @Component({
   selector: 'app-container',

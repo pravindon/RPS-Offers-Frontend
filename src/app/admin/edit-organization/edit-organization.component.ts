@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { StudentService } from 'src/app/services/student.service';
+import { StudentService } from 'src/app/shared/core/services/student.service';
 import {FormControl, FormGroup} from '@angular/forms'
 import { ActivatedRoute } from '@angular/router';
 
