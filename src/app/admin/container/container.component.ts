@@ -15,9 +15,8 @@ export class ContainerComponent implements OnInit {
     this.getStudnetList();
   }
 
-  url = "http://localhost:4000/v1";
-  onSubmit(data: any) {
-    this.http.post(this.url + `/students`, data).subscribe((result) => {
+  onSubmit(data : any){
+    this.studentService.saveStudents(data).subscribe((result) => {
       console.log(result);
     })
   }

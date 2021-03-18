@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms'
+import { StudentService } from 'src/app/shared/core/services/student.service';
 
 @Component({
   selector: 'app-organization',
@@ -8,13 +9,6 @@ import {FormControl, FormGroup} from '@angular/forms'
   styleUrls: ['./organization.component.scss']
 })
 export class OrganizationComponent implements OnInit {
-
-  alertSuccess = false;
-  constructor(private http:HttpClient) { }
-
-  ngOnInit(): void {
-    this.organizationData();
-  }
 
   organizationForm = new FormGroup({
     cardNo : new FormControl(),
@@ -38,16 +32,19 @@ export class OrganizationComponent implements OnInit {
     gender: new FormControl(),
     firmLogo: new FormControl()
   })
+  alertSuccess = false;
+  constructor(private http:HttpClient, private studentService : StudentService) { }
 
+  ngOnInit(): void {
+    this.organizationData();
+  }
 
-  url = "http://localhost:4000/v1";
   organizationData(){
-    this.http.post(this.url + `/organization`, this.organizationForm.value).subscribe((result) => {
-      console.log(result);
+    this.studentService.postOrganization(this.organizationForm.value).subscribe((result) => {
+      console.log('Organization Data got it', result);
       this.organizationForm.reset();
       this.alertSuccess = true;
     })
-    console.warn(this.organizationForm.value);
   }
 
   closeAlert(){

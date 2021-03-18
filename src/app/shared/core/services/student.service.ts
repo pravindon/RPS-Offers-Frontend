@@ -1,35 +1,47 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { API_URL, ApiUrl } from '../constant/index';
 
 @Injectable({
   providedIn: 'root'
 })
 export class StudentService {
 
+  getHeader() {
+    return new HttpHeaders()
+      .set('Content-Type', 'application/json; charset=utf-8')
+      .set('Accept', 'application/json; charset=utf-8');
+  }
+
   constructor(private http : HttpClient) { }
 
-  private url :  string = "http://localhost:4000/v1/students";
   getStudent(): Observable<any> {
-    return this.http.get(this.url);
+    return this.http.get(ApiUrl.StudentsUrl);
   }
 
-  private urll :  string = "http://localhost:4000/v1/organization/";
+  saveStudents(data : any){
+    return this.http.post(ApiUrl.StudentsUrl, data)
+  }
+
   getOrganization(): Observable<any> {
-    return this.http.get(this.urll);
+    return this.http.get(ApiUrl.orgUrl)
   }
 
-  // private urlll :  string = "http://localhost:4000/v1/organization/";
+  postOrganization(data : any) {
+    return this.http.post(ApiUrl.orgUrl, data);
+  }
+
   deleteOrganization(id : any) {
-    return this.http.delete(this.urll+id);
+    return this.http.delete(ApiUrl.orgUrl+id)
   }
 
   getCurrentOrg(id : any) {
-    return this.http.get(this.urll+id);
+    return this.http.get(ApiUrl.orgUrl+id)
   }
 
   updateOrg(id : any, data : any) {
-    return this.http.put(this.urll+id, data);
+    return this.http.put(ApiUrl.orgUrl+id, data)
   }
 
 }
