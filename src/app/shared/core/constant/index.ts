@@ -11,8 +11,3 @@ export const ApiUrl = {
 function urlCreator(actionName: string): string {
   return `${environment.baseURL}${actionName}`;
 }
-
-export enum ActiveTenderOrigin {
-  flexFlow,
-  fastFlow
-}
