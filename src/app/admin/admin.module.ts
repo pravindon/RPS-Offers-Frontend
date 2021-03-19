@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http'
 import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 import { AdminRoutingModule } from './admin-routing.module';
-import { DashboardComponent } from '../super-admin/dashboard/dashboard.component';
 import { AddAdminComponent } from './add-admin/add-admin.component';
 import { StudentService } from '../shared/core/services/student.service';
 import { ContainerComponent } from './container/container.component';
@@ -11,7 +10,6 @@ import { AdminComponent } from './admin.component';
 
 @NgModule({
   declarations: [
-    DashboardComponent,
     AddAdminComponent,
     ContainerComponent,
     AdminComponent,

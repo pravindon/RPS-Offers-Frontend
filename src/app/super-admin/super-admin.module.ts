@@ -8,11 +8,13 @@ import { OrganizationComponent } from './organization/organization.component';
 import { OrganizationListComponent } from './organization-list/organization-list.component';
 import { EditOrganizationComponent } from './edit-organization/edit-organization.component';
 import { StudentService } from '../shared/core/services/student.service';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 @NgModule({
   declarations: [
     SuperAdminComponent,
+    DashboardComponent,
     OrganizationComponent,
     OrganizationListComponent,
     EditOrganizationComponent,
