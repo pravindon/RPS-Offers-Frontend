@@ -3,18 +3,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { AddAdminComponent } from './add-admin/add-admin.component';
 import { AdminComponent } from './admin.component';
 import { ContainerComponent } from './container/container.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { EditOrganizationComponent } from './edit-organization/edit-organization.component';
-import { OrganizationListComponent } from './organization-list/organization-list.component';
-import { OrganizationComponent } from './organization/organization.component';
-
+import { DashboardComponent } from '../super-admin/dashboard/dashboard.component';
 const routes: Routes = [
   { path: 'admin', component:AdminComponent },
   { path: 'addashboard', component: DashboardComponent },
   { path: 'adAddAdmin', component: AddAdminComponent },
-  { path: 'organization', component: OrganizationComponent },
-  { path: 'editOrganization/:id', component: EditOrganizationComponent },
-  { path: 'organizationList', component: OrganizationListComponent },
   { path: 'container', component: ContainerComponent}
 ];
 

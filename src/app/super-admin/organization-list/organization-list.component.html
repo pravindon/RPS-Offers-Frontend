@@ -7,7 +7,7 @@
             <h4>Organization list</h4>
           </div>
           <div class="col-md-2 float-right">
-            <a routerLink="/admin/organization"><i class="fa fa-user-plus  float-right" style="font-size: 30px;"></i></a>
+            <a routerLink="/superAdmin/organization"><i class="fa fa-user-plus  float-right" style="font-size: 30px;"></i></a>
           </div>
         </div>
         <table class="table table-bordered mt-3">
@@ -33,10 +33,10 @@
                   <a><i class="fa fa-eye"></i></a>
                 </div>
                 <div class="col-md-4">
-                  <a routerLink="/admin/editOrganization/{{org._id}}"><i class="fa fa-edit"></i></a>
+                  <a routerLink="/superAdmin/editOrganization/{{org._id}}"><i class="fa fa-edit"></i></a>
                 </div>
                 <div class="col-md-4">
-                  <a (click)="deleteOrg(org._id)" routerLink="/admin/organizationList"><i class="fa fa-trash"></i></a>
+                  <a (click)="deleteOrg(org._id)" routerLink="/superAdmin/organizationList"><i class="fa fa-trash"></i></a>
                   <!-- <button (click)="deleteOrg(org._id)"><i class="fa fa-trash"></i></button> -->
                 </div>
               </div>
