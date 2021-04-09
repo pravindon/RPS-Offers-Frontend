@@ -21,7 +21,7 @@ export class HttpService {
   }
 
   deleteUserProfile(id : any): Observable<any> {
-    return this.http.delete(ApiUrl.userUrl)
+    return this.http.delete(ApiUrl.userUrl+id)
   }
 
   getOrganization(): Observable<any> {
