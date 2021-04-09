@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { StudentService } from 'src/app/shared/core/services/student.service';
+import { HttpService } from '../../shared/core/services/http.service';
 import {FormControl, FormGroup} from '@angular/forms'
 import { ActivatedRoute } from '@angular/router';
 
@@ -10,7 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class EditOrganizationComponent implements OnInit {
 
-  constructor(private router : ActivatedRoute, private studentService : StudentService) { }
+  constructor(private router : ActivatedRoute, private httpServices : HttpService) { }
 
   editOrganizationForm = new FormGroup({
     cardNo : new FormControl(''),
@@ -36,7 +36,7 @@ export class EditOrganizationComponent implements OnInit {
   })
   ngOnInit(): void {
     this.editOrganizationData();
-    this.studentService.getCurrentOrg(this.router.snapshot.params.id).subscribe((result: any) => {
+    this.httpServices.getCurrentOrg(this.router.snapshot.params.id).subscribe((result: any) => {
       this.editOrganizationForm = new FormGroup({
         cardNo : new FormControl(result['cardNo']),
         orgnaziationName: new FormControl(result['orgnaziationName']),
@@ -64,7 +64,7 @@ export class EditOrganizationComponent implements OnInit {
 
   editOrganizationData() {
     console.log(this.router.snapshot.params.id);
-    this.studentService.updateOrg(this.router.snapshot.params.id, this.editOrganizationForm.value).subscribe((result) => {
+    this.httpServices.updateOrg(this.router.snapshot.params.id, this.editOrganizationForm.value).subscribe((result) => {
       console.log(this.editOrganizationForm.value, result);
       this.editOrganizationForm.reset();
     })

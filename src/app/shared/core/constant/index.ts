@@ -5,7 +5,8 @@ export const API_URL = 'http://localhost:4000/v1';
 export const ApiUrl = {
   baseUrl: environment.baseURL,
   StudentsUrl: urlCreator('/students'),
-  orgUrl: urlCreator('/organization')
+  orgUrl: urlCreator('/organization/'),
+  userUrl: urlCreator('/euProfile/')
 };
 
 function urlCreator(actionName: string): string {

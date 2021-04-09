@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { StudentService } from 'src/app/shared/core/services/student.service';
+import { HttpService } from '../../shared/core/services/http.service';
 
 @Component({
   selector: 'app-organization-list',
@@ -9,7 +9,7 @@ import { StudentService } from 'src/app/shared/core/services/student.service';
 })
 export class OrganizationListComponent implements OnInit {
 
-  constructor( private studentService : StudentService) { }
+  constructor( private httpServices : HttpService ) { }
 
   ngOnInit(): void {
     this.getOrg()
@@ -17,14 +17,14 @@ export class OrganizationListComponent implements OnInit {
 
   getOrgList : any = [];
   getOrg() {
-    this.studentService.getOrganization().subscribe(data => {
+    this.httpServices.getOrganization().subscribe(data => {
       this.getOrgList = data;
       console.log('Organization list', data);
     })
   }
 
   deleteOrg(id : any) {
-    this.studentService.deleteOrganization(id).subscribe(data => {
+    this.httpServices.deleteOrganization(id).subscribe(data => {
       this.getOrg();
     })
     console.log(id);

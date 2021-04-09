@@ -9,6 +9,7 @@ import { OrganizationListComponent } from './organization-list/organization-list
 import { EditOrganizationComponent } from './edit-organization/edit-organization.component';
 import { StudentService } from '../shared/core/services/student.service';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { EndUserPrfileListComponent } from './end-user-prfile-list/end-user-prfile-list.component';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     OrganizationComponent,
     OrganizationListComponent,
     EditOrganizationComponent,
+    EndUserPrfileListComponent,
   ],
   imports: [
     CommonModule,

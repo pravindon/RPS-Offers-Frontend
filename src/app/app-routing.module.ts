@@ -8,7 +8,7 @@ const routes: Routes = [
     redirectTo: '/authorization/login',
     pathMatch: 'full',
   },
-  { path: 'admin', loadChildren: ()=> import('./admin/admin.module').then(mod => mod.AdminModule) },
+  // { path: 'admin', loadChildren: ()=> import('./admin/admin.module').then(mod => mod.AdminModule) },
   { path: 'superAdmin', loadChildren: () => import('./super-admin/super-admin.module').then(m => m.SuperAdminModule) },
   { path: 'authorization', loadChildren: () => import('./authorization/authorization.module').then(m => m.AuthorizationModule) },
   { path: '**', component: PageNotFindComponent }

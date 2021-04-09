@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms'
-import { StudentService } from 'src/app/shared/core/services/student.service';
+import { HttpService } from '../../shared/core/services/http.service';
 
 @Component({
   selector: 'app-organization',
@@ -33,14 +33,14 @@ export class OrganizationComponent implements OnInit {
     firmLogo: new FormControl()
   })
   alertSuccess = false;
-  constructor(private http:HttpClient, private studentService : StudentService) { }
+  constructor(private http:HttpClient, private httpServices : HttpService) { }
 
   ngOnInit(): void {
     this.organizationData();
   }
 
   organizationData(){
-    this.studentService.postOrganization(this.organizationForm.value).subscribe((result) => {
+    this.httpServices.postOrganization(this.organizationForm.value).subscribe((result) => {
       console.log('Organization Data got it', result);
       this.organizationForm.reset();
       this.alertSuccess = true;
